@@ -34,8 +34,8 @@
                 </p>
                 <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                        <a href="{{ route('alumno.show', $alumno->id) }}" class="btn btn-sm btn-outline-secondary">View</a>
-                        <a href="{{ route('alumno.edit', $alumno->id) }}" class="btn btn-sm btn-outline-secondary">Edit</a>
+                        <a href="{{ route('alumno.show', $alumno->id) }}" class="btn btn-sm btn-outline-secondary">Ver</a>
+                        <a href="{{ route('alumno.edit', $alumno->id) }}" class="btn btn-sm btn-outline-secondary">Editar</a>
                     </div>
                     <small class="text-body-secondary">{{ $alumno->nombre }}</small>
                 </div>
