@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Alumno extends Model
 {
-    protected $table = 'alumnos';
+    protected $table = 'alumno';
 
     protected $fillable = [
         'nombre',
@@ -18,13 +18,13 @@ class Alumno extends Model
         'experiencia',
         'formacion',
         'habilidades',
-        'fotografia'
+        'path'
     ];
 
     function getPath() {
         $url = url('assets/img/user.png');
-        if($this->fotografia != null) {
-            $url = url('storage/' . $this->fotografia);
+        if($this->path != null) {
+            $url = url('storage/' . $this->path);
         }
         return $url;
     }

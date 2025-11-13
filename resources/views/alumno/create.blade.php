@@ -49,8 +49,8 @@
     </div>
     <br>
     <div>
-        <label for="fotografia">Fotografía:</label>
-        <input class="form-control" id="fotografia" type="file" name="fotografia" accept="image/*">
+        <label for="image">Fotografía:</label>
+        <input class="form-control" id="image" type="file" name="image" accept="image/*">
     </div>
     <br>
     <div class="upper-space" style="padding-top: 16px;">

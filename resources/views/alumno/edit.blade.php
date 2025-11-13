@@ -50,8 +50,8 @@
     </div>
     <br>
     <div>
-        <label for="fotografia">Fotografía:</label>
-        <input class="form-control" id="fotografia" type="file" name="fotografia" accept="image/*">
+        <label for="image">Fotografía:</label>
+        <input class="form-control" id="image" type="file" name="image" accept="image/*">
     </div>
     <br>
     <div>
@@ -59,7 +59,7 @@
             <label for="deleteimage" class="form-check-label">Eliminar Fotografía:</label>
             <input type="checkbox" class="form-check-input" id="deleteimage" name="deleteimage" value="delete">
         </div>
-        <img src="{{route('fotografia.view', $alumno->id)}}?r={{rand(1, 1000)}}" width="140px">
+        <img src="{{route('image.view', $alumno->id)}}?r={{rand(1, 1000)}}" width="140px">
     </div>
     <div class="upper-space" style="padding-top: 16px;">
         <input class="btn btn-primary" type="submit" value="Editar alumno">

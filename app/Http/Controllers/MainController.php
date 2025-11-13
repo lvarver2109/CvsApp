@@ -12,8 +12,8 @@ class MainController extends Controller {
         $alumnos = Alumno::all();
         foreach($alumnos as $alumno) {
             $url = url('assets/img/user.png');
-            if($alumno->fotografia != null) {
-                $url = url('storage/' . $alumno->fotografia);
+            if($alumno->path != null) {
+                $url = url('storage/' . $alumno->path);
             }
             $alumno->newPath = $url;
         }

@@ -8,8 +8,8 @@
         <div class="card shadow-sm" style="min-height: 500px;">
             @php
                 $url = url('assets/img/user.png');
-                if($alumno->fotografia != null) {
-                    $url = url('storage/' . $alumno->fotografia);
+                if($alumno->path != null) {
+                    $url = url('storage/' . $alumno->path);
                 }
             @endphp
             <svg aria-label="Placeholder: Thumbnail" class="bd-placeholder-img card-img-top"
@@ -37,7 +37,7 @@
                         <a href="{{ route('alumno.show', $alumno->id) }}" class="btn btn-sm btn-outline-secondary">Ver</a>
                         <a href="{{ route('alumno.edit', $alumno->id) }}" class="btn btn-sm btn-outline-secondary">Editar</a>
                     </div>
-                    <small class="text-body-secondary">{{ $alumno->nombre }}</small>
+                    <small class="text-body-secondary">{{ $alumno->nombre }} {{ $alumno->apellidos }}</small>
                 </div>
             </div>
         </div>

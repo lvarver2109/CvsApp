@@ -27,15 +27,8 @@
             <li class="nav-item">
               <a class="nav-link" href="{{ route('alumno.create') }}">Añadir Alumno</a>
             </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                Alumnos
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="{{ route('alumno.create') }}">Crear</a></li>
-                <li><a class="dropdown-item" href="{{ route('alumno.index') }}">Alumnos</a></li>
-              </ul>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('alumno.index') }}">Alumnos</a>
             </li>
           </ul>
         </div>

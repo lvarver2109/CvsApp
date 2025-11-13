@@ -6,6 +6,6 @@ use App\Http\Controllers\ImageController;
 use App\Http\Controllers\MainController;
 
 Route::get('/', [MainController::class, 'index'])->name('main.index');
-Route::get('fotografia/{id}', [ImageController::class, 'view'])->name('fotografia.view');
+Route::get('image/{id}', [ImageController::class, 'view'])->name('image.view');
 
 Route::resource('alumno', AlumnoController::class);

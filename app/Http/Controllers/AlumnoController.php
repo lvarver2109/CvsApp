@@ -28,8 +28,8 @@ class AlumnoController extends Controller
         $alumno = new Alumno($request->all());
         try {
             $result = $alumno->save();
-            $fotografia = $this->upload($request, $alumno->id);
-            $alumno->fotografia = $fotografia;
+            $path = $this->upload($request, $alumno->id);
+            $alumno->path = $path;
             $result = $alumno->save();
             $message = 'El alumno ha sido creado.';
         } catch(UniqueConstraintViolationException $e) {
@@ -50,14 +50,14 @@ class AlumnoController extends Controller
     }
 
     private function upload(Request $request, $id) {
-        $fotografia = null;
+        $path = null;
         if($request->hasFile('image') && $request->file('image')->isValid()) {
             $image = $request->file('image');
             $fileName = $id . '.' . $image->getClientOriginalExtension();
-            $fotografia = $image->storeAs('images', $fileName, 'public');
-            $fotografia = $image->storeAs('images', $fileName, 'local');
+            $path = $image->storeAs('images', $fileName, 'public');
+            $path = $image->storeAs('images', $fileName, 'local');
         }
-        return $fotografia;
+        return $path;
     }
 
     function show(Alumno $alumno): View {
@@ -72,14 +72,14 @@ class AlumnoController extends Controller
     function update(Request $request, Alumno $alumno) {
         $result = false;
         if ($request->deleteimage == 'delete') {
-            $this->destroyImage(storage_path(storage_path('app/public') . '/' . $alumno->fotografia));
-            $this->destroyImage(storage_path(storage_path('app/private') . '/' . $alumno->fotografia));
-            $alumno->fotografia = null;
+            $this->destroyImage(storage_path(storage_path('app/public') . '/' . $alumno->path));
+            $this->destroyImage(storage_path(storage_path('app/private') . '/' . $alumno->path));
+            $alumno->path = null;
         }
         try {
-            $fotografia = $this->upload($request, $alumno->id);
-            if ($fotografia != null) {
-                $alumno->fotografia = $fotografia;
+            $path = $this->upload($request, $alumno->id);
+            if ($path != null) {
+                $alumno->path = $path;
             }
             $result = $alumno->update($request->all());
             $message = 'El alumno ha sido editado.';

@@ -10,10 +10,10 @@ class ImageController extends Controller {
     function view($id) {
         $alumno = Alumno::find($id);
         if($alumno == null ||
-                $alumno->fotografia == null ||
-                !file_exists(storage_path('app/private') . '/' . $alumno->fotografia)) {
+                $alumno->path == null ||
+                !file_exists(storage_path('app/private') . '/' . $alumno->path)) {
             return response()->file(base_path('public/assets/img/noimage.png'));
         }
-        return response()->file(storage_path('app/private') . '/' . $alumno->fotografia);
+        return response()->file(storage_path('app/private') . '/' . $alumno->path);
     }
 }
